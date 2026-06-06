@@ -9,7 +9,7 @@ A lightweight deep learning model that identifies plant diseases from leaf image
 - **Validation accuracy:** 99.36%
 - **Weighted F1 score:** 0.9943
 - **Image size:** 160 × 160
-- **Parameters:** ~2.4 M (mobile-friendly, ~10 MB)
+- **Parameters:** ~2.4 M (mobile-friendly, ~28 MB)
 - **Classes:** 38 disease types across 14 crops (Apple, Blueberry, Cherry, Corn, Grape, Orange, Peach, Pepper, Potato, Raspberry, Soybean, Squash, Strawberry, Tomato)
 
 ## Why MobileNetV2?
@@ -34,12 +34,13 @@ pip install -r requirements.txt
 
 ### 3. Download the trained model
 
-The model file (~10 MB) is hosted on Hugging Face:
+The model file (~28 MB) is hosted on Hugging Face:
 
 **Direct download:**  
-https://huggingface.co/ashikaasriarun/mobilenetv2-plantvillage/resolve/main/best_mnv2_pv_original.keras
+https://huggingface.co/ashikaasriarun/MobileNet-V2-PlantVillage/resolve/main/best_mnv2_pv_original.keras
 
-Place `best_mnv2_pv_original.keras` in the same folder as `app.py`.
+**Model page:**  
+https://huggingface.co/ashikaasriarun/MobileNet-V2-PlantVillage
 
 ### 4. Run the app
 
