@@ -1,5 +1,6 @@
 import json
 import os
+import urllib.request
 import numpy as np
 import gradio as gr
 import tensorflow as tf
@@ -10,6 +11,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(HERE, "best_mnv2_pv_original.keras")
 LABELS_PATH = os.path.join(HERE, "labels_pv_original.json")
 IMG_SIZE = 160
+
+# Auto-download model from Hugging Face if not present locally
+MODEL_URL = "https://huggingface.co/ashikaasriarun/MobileNet-V2-PlantVillage/resolve/main/best_mnv2_pv_original.keras"
+
+if not os.path.exists(MODEL_PATH):
+    print(f"Model not found locally. Downloading from Hugging Face (~28 MB)...")
+    urllib.request.urlretrieve(MODEL_URL, MODEL_PATH)
+    print("Download complete.")
 
 print("Loading model...")
 model = tf.keras.models.load_model(MODEL_PATH, compile=False)
