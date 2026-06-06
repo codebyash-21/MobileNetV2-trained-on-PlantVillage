@@ -1,0 +1,40 @@
+# Virtual environments
+venv/
+.venv/
+env/
+plant_env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyc
+*.pyo
+*.egg-info/
+
+# Trained model files (hosted on Hugging Face instead)
+*.keras
+*.h5
+*.pb
+*.tflite
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Gradio
+flagged/
+gradio_cached_examples/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
