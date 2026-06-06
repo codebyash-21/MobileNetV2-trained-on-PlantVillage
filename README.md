@@ -27,3 +27,52 @@ During installation, check **"Add python.exe to PATH"**.
 ### 2. Create virtual environment and install dependencies
 
 ```bash
+py -3.12 -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 3. Download the trained model
+
+The model file (~10 MB) is hosted on Hugging Face:
+
+**Direct download:**  
+https://huggingface.co/ashikaasriarun/mobilenetv2-plantvillage/resolve/main/best_mnv2_pv_original.keras
+
+Place `best_mnv2_pv_original.keras` in the same folder as `app.py`.
+
+### 4. Run the app
+
+```bash
+python app.py
+```
+
+Open <http://127.0.0.1:7860> in your browser. Upload a leaf image to get a disease prediction.
+
+## Files
+
+| File | Description |
+|---|---|
+| `app.py` | Gradio interface for live inference |
+| `labels_pv_original.json` | Class index → name mapping (38 classes) |
+| `requirements.txt` | Python dependencies |
+| `best_mnv2_pv_original.keras` | Trained model weights (download from Hugging Face) |
+
+## Performance Comparison
+
+MobileNetV2 achieves 99.36% accuracy at ~25% the size of larger models, with comparable performance.
+
+| Model | Accuracy | F1 Score | Size (INT8 TFLite) |
+|---|---|---|---|
+| **MobileNetV2** | **99.36%** | **0.9943** | **~3 MB** |
+| EfficientNet-B0 | 99.71% | 0.9972 | ~5 MB |
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+## Citation
+
+If you use this model in your research, please cite the original PlantVillage dataset:
+
+> Mohanty, S. P., Hughes, D. P., & Salathé, M. (2016). Using deep learning for image-based plant disease detection. *Frontiers in Plant Science*, 7, 1419.
